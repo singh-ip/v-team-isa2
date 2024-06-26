@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+   title: LBP API open api definition 
+   version: 1.0.0
+servers:
+  - url: https://staging-fl-platform-api.herokuapp.com/api/v1
+paths:
+  /register:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: neem@yopmail.com
+                password:
+                  type: string
+                  format: string
+                  example: Test@125683
+                password_confirmation:
+                  type: string
+                  format: string
+                  example: Test@125683  
+      responses:
+        '201':
+          description: Regsitered successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      first_name:
+                        type: string
+                      last_name:
+                        type: string
+                      email:
+                        type: string
+                      created_at:
+                        type: string
+                      id:
+                        type: integer
+                      onboarded:
+                        type: boolean
+                  message:
+                    type: string
+      
