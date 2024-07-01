@@ -4,6 +4,10 @@ WORKDIR /var/www/html
 
 COPY . /var/www/html
 
-RUN composer install --no-progress
-RUN npm install
-RUN npm run build
+COPY php.ini /usr/local/etc/php/
+
+ENTRYPOINT ["/var/www/html/dockerfiles/api-runner"]
+
+#RUN composer install --no-progress
+#RUN npm install
+#RUN npm run build
