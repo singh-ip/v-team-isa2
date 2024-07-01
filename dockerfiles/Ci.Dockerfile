@@ -4,6 +4,8 @@ WORKDIR /var/www/html
 
 COPY . /var/www/html
 
+RUN ls
+
 COPY php.ini /usr/local/etc/php/
 
 ENTRYPOINT ["/var/www/html/dockerfiles/api-runner"]
