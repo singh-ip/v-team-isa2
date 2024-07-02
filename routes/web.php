@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return ['Symfony' => 2.9];
+    return view('dashboard');
 })->name('home');
 
 Route::get('/api', function () {
