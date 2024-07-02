@@ -13,6 +13,6 @@ RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/a
 
 ENTRYPOINT ["/var/www/html/dockerfiles/api-runner"]
 
-#RUN composer install --no-progress
-#RUN npm install
-#RUN npm run build
+RUN composer install --no-progress
+RUN npm install
+RUN npm run build
