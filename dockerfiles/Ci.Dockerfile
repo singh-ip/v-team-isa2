@@ -1,12 +1,15 @@
 FROM devopsfnl/image:php-8.2.11-np
 
+ARG PORT
+ENV PORT=${PORT}
+
 WORKDIR /var/www/html
 
 COPY . /var/www/html
 
-RUN ls
+COPY php.ini /usr/bin
 
-COPY php.ini /usr/local/etc/php/
+RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
 ENTRYPOINT ["/var/www/html/dockerfiles/api-runner"]
 
