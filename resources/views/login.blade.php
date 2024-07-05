@@ -1,6 +1,7 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    <div>{{ env('APP_NAME', 'V-team-isa2'); }} </div>
 
     <form method="POST" action="{{ route('admin.login.store') }}">
         @csrf
