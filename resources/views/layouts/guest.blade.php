@@ -13,8 +13,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
-        <link rel="icon" href="{{ asset('images/favicon.png') }}">
-        <link rel="apple-touch-icon-precomposed" href="{{ asset('images/apple-touch-icon-precomposed.png') }}">
+        <link rel="icon" href="{{ asset('images/favicon.png', false) }}">
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('images/apple-touch-icon-precomposed.png', false) }}">
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
         <!-- Scripts -->
