@@ -1,0 +1,4 @@
+#!/bin/bash
+
+chmod -R 777 storage bootstrap
+php artisan migrate --seed
