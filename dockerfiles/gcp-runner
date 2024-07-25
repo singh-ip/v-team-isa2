@@ -1,15 +1,3 @@
 #!/bin/bash
 
 composer install
-
-
-chmod -R 777 storage bootstrap
-php artisan migrate --seed
-
-git config --global --add safe.directory /var/www/html
-git config core.filemode false
-
-npm install
-npm run build
-
-apache2-foreground
