@@ -8,6 +8,8 @@ php artisan migrate --force --seed
 git config --global --add safe.directory /var/www/html
 git config core.filemode false
 
+composer run pest
+
 npm install
 npm run build
 
