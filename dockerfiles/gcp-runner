@@ -3,8 +3,6 @@
 composer install
 
 chmod -R 777 storage bootstrap
-
-npm install
-npm run build
+php artisan migrate --seed
 
 apache2-foreground
