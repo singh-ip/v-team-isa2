@@ -3,7 +3,7 @@
 composer install
 
 chmod -R 777 storage bootstrap
-php artisan migrate
+php artisan migrate --force
 
 git config --global --add safe.directory /var/www/html
 git config core.filemode false
