@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([PermissionSeeder::class]);
         $this->call([FeatureSeeder::class]);
 
-        if (App::environment() === 'local' || App::runningUnitTests()) {
+        if (in_array(App::environment(), ['local', 'staging']) || App::runningUnitTests()) {
             User::updateOrCreate(['email' => 'admin@example.com'], [
                 'first_name' => 'Super',
                 'last_name' => 'Admin',
