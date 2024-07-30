@@ -3,6 +3,7 @@
 composer install
 
 php artisan migrate --force --seed
+php artisan cache:clear
 
 git config --global --add safe.directory /var/www/html
 git config core.filemode false
