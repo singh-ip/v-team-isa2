@@ -13,7 +13,7 @@ RUN docker-compose -f ci-docker-compose.yml exec lbp-api postman collection run 
 
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
-RUN chmod -R 775 storage bootstrap
+RUN chmod -R 777 storage bootstrap
 RUN chown -R www-data:www-data storage bootstrap
 
 ENTRYPOINT ["/var/www/html/dockerfiles/gcp-runner"]
