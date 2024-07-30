@@ -2,9 +2,6 @@
 
 composer install
 
-chmod -R 777 storage bootstrap
-chown -R www-data:www-data storage bootstrap
-
 php artisan migrate --force --seed
 
 git config --global --add safe.directory /var/www/html
