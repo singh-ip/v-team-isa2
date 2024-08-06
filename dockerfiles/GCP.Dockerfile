@@ -7,7 +7,7 @@ WORKDIR /var/www/html
 
 COPY . /var/www/html
 
-COPY php.ini /usr/bin
+#COPY php.ini /usr/bin
 
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
