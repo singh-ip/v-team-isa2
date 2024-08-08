@@ -3,7 +3,7 @@ steps:
     args: [ '-f', 'ci-docker-compose.yml', 'up', '-d' ]
     id: Set Docker Compose
   - name: 'docker/compose:1.26.2'
-    args: [ '-f', 'ci-docker-compose.yml', 'exec lbp-api composer run ci' ]
+    args: [ '-f', 'ci-docker-compose.yml', 'exec', 'lbp-api composer run ci' ]
     id: CI checks
   - name: gcr.io/cloud-builders/docker
     args:
