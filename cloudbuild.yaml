@@ -4,6 +4,7 @@ steps:
     id: Set Docker Compose
   - name: 'docker/compose:1.26.2'
     args: [ '-f', 'ci-docker-compose.yml', 'exec', '-T' ]
+    script: "lbp-api composer run ci"
     id: CI checks
   - name: gcr.io/cloud-builders/docker
     args:
