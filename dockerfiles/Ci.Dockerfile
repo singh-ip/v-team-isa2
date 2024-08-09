@@ -14,6 +14,6 @@ RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/a
 RUN chmod -R 777 storage bootstrap
 RUN chown -R www-data:www-data storage bootstrap
 
-RUN chmod +x ci-runner
+RUN chmod +x var/www/html/dockerfiles/ci-runner
 
 ENTRYPOINT ["/var/www/html/dockerfiles/ci-runner"]
