@@ -14,10 +14,10 @@ steps:
     args: [ '-f', 'ci-docker-compose.yml', 'up', '-d' ]
     id: Set Docker Compose
   - name: 'docker/compose:1.26.2'
-    script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api sudo composer install"
+    script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api composer install"
     id: Installing dependencies
   - name: 'docker/compose:1.26.2'
-    script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api sudo composer run ci"
+    script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api composer run ci"
     id: CI checks
   - name: gcr.io/cloud-builders/docker
     args:
