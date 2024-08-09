@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: dockerfiles/Ci.Dockerfile
     container_name: lbp-api
+    user: www-data:www-data
     depends_on:
       - lbp-pg
     restart: always
