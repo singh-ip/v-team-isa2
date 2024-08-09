@@ -1,5 +1,7 @@
 #!/bin/bash
 
+RUN composer install
+
 php artisan migrate --force --seed
 php artisan cache:clear
 
