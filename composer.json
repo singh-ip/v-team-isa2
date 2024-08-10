@@ -26,7 +26,8 @@
         "spatie/laravel-permission": "^5.10",
         "symfony/http-client": "^6.1",
         "symfony/postmark-mailer": "^6.1",
-        "wildbit/postmark-php": "^4.0"
+        "wildbit/postmark-php": "^4.0",
+        "php-http/discovery": "1.15.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",
@@ -150,7 +151,7 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "php-http/discovery": false
+            "php-http/discovery": true
         }
     },
     "minimum-stability": "stable",
