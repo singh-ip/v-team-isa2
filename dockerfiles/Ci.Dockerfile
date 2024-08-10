@@ -11,7 +11,4 @@ COPY php.ini /usr/bin
 
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
-RUN chmod -R 777 storage bootstrap dockerfiles
-RUN chown -R www-data:www-data storage bootstrap dockerfiles
-
 ENTRYPOINT ["/var/www/html/dockerfiles/ci-runner"]
