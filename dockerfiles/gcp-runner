@@ -2,6 +2,9 @@
 
 RUN composer install
 
+chmod -R 777 storage bootstrap dockerfiles
+chown -R www-data:www-data storage bootstrap dockerfiles
+
 php artisan migrate --force --seed
 php artisan cache:clear
 
