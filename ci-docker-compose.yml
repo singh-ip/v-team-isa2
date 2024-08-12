@@ -18,6 +18,11 @@ services:
     networks:
       lbp-network:
         ipv4_address: 10.10.1.1
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 500M
     extra_hosts:
       - host.docker.internal:host-gateway
 
