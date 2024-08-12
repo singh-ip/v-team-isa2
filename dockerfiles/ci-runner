@@ -1,9 +1,9 @@
 #!/bin/bash
 
-composer install
-
 chmod -R 777 storage bootstrap dockerfiles
 chown -R www-data:www-data storage bootstrap dockerfiles
+
+composer install
 
 php artisan migrate --force --seed
 php artisan cache:clear
