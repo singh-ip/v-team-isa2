@@ -18,7 +18,6 @@ steps:
 #    id: Installing dependencies
   - name: 'docker/compose:latest'
     cpus: "0.5"
-    mem_reservation: "50M"
     mem_limit: "500M"
     script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api composer run ci"
     id: CI checks
