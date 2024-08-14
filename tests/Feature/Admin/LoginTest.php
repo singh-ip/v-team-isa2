@@ -7,6 +7,11 @@ test('See login screen', function () {
         ->assertOk();
 });
 
+test('See login screen', function () {
+    $this->get(route('admin.login.test.fail'))
+        ->assertOk();
+});
+
 test('Super Admin can login to Admin Dashboard', function () {
     $admin = createSuperAdmin('test@example.com', 'Password@123');
     $this->post(route('admin.login.store'), [
