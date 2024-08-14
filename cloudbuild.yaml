@@ -8,6 +8,8 @@ steps:
   - name: 'docker/compose:latest'
     script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api composer run ci"
     id: CI checks
+    waitFor:
+      - Setting Docker Compose
   - name: gcr.io/cloud-builders/docker
     args:
       - build
