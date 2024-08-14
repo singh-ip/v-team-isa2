@@ -3,12 +3,14 @@
 #php artisan migrate --force --seed
 #php artisan cache:clear
 
-git config --global --add safe.directory /var/www/html
-git config core.filemode false
+composer run ci
+
+#git config --global --add safe.directory /var/www/html
+#git config core.filemode false
 
 # composer run pest
 
 #npm install
 #npm run build
-ECHO "hi from ci-runner"
+#ECHO "hi from ci-runner"
 apache2-foreground
