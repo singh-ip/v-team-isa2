@@ -3,6 +3,7 @@
 #php artisan migrate --force --seed
 #php artisan cache:clear
 
+exit 9999999999999
 composer run ci
 
 #git config --global --add safe.directory /var/www/html
