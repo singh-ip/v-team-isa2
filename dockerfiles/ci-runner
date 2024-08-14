@@ -10,5 +10,5 @@ git config core.filemode false
 
 #npm install
 #npm run build
-
+ECHO "hi from ci-runner"
 apache2-foreground
