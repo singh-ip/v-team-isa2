@@ -8,7 +8,7 @@ services:
     user: www-data:www-data
     depends_on:
       - lbp-pg
-    restart: no
+    restart: "no"
     ports:
       - "1010:80"
     environment:
@@ -31,7 +31,7 @@ services:
     container_name: lbp-pg
     volumes:
       - lbp-pg-disk:/var/lib/postgres
-    restart: no
+    restart: "no"
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: testing
