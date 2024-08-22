@@ -12,6 +12,9 @@ steps:
   #      - settingDockerCompose
   - name: 'docker/compose:latest'
     args: [ 'vendor/bin/phpunit', '--colors=always' ]
+    waitFor:
+      - settingDockerCompose
+
   - name: gcr.io/cloud-builders/docker
     args:
       - build
