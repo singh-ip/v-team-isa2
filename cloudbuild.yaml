@@ -12,7 +12,7 @@ steps:
   #      - settingDockerCompose
 
   - name: 'docker/compose:latest'
-    args: [ 'vendor/bin/phpunit', '--colors=always' ]
+    args: [ 'php artisan test', '--colors=always' ]
     waitFor:
       - settingDockerCompose
 
