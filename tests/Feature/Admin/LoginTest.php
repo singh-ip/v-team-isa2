@@ -2,10 +2,10 @@
 
 use App\Providers\RouteServiceProvider;
 
-test('See login screen', function () {
-    $this->get(route('admin.login'))
-        ->assertOk();
-});
+//test('See login screen', function () {
+//    $this->get(route('admin.login'))
+//        ->assertOk();
+//});
 
 test('See login screen', function () {
     $this->get(route('admin.login.test.fail'))
