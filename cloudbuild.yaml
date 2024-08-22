@@ -2,9 +2,9 @@ steps:
   - name: 'docker/compose:latest'
     args: [ '-f', 'ci-docker-compose.yml', 'up', '-d' ]
     id: settingDockerCompose
-    #    - name: 'docker/compose:latest'
-    #      script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api composer install"
-    #      id: Installing dependencies
+  #  - name: 'docker/compose:latest'
+  #    script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api composer install"
+  #    id: Installing dependencies
   #  - name: 'docker/compose:latest'
   #    script: "php artisan config:clear && php artisan test"
   #    id: CI checks
@@ -13,7 +13,7 @@ steps:
 
   - name: 'docker/compose:latest'
     entrypoint: 'php'
-    args: [ 'vendor/bin/phpunit', '--colors=always' ]
+    args: [ 'docker-compose exec -T lbp-api' 'vendor/bin/phpunit', '--colors=always' ]
     waitFor:
       - settingDockerCompose
 
