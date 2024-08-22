@@ -10,9 +10,10 @@ steps:
   #    id: CI checks
   #    waitFor:
   #      - settingDockerCompose
-  
+
   - name: 'docker/compose:latest'
     args: [ 'vendor/bin/phpunit', '--colors=always' ]
+    entrypoint: 'lbp-api'
     waitFor:
       - settingDockerCompose
 
