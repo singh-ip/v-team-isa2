@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RUN composer install
+composer install
 
 chmod -R 777 storage bootstrap dockerfiles
 chown -R www-data:www-data storage bootstrap dockerfiles
