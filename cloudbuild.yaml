@@ -20,6 +20,8 @@ steps:
       - .
       - '-f'
       - dockerfiles/GCP.Dockerfile
+    waitFor:
+      - CI_checks
     id: Build
   - name: gcr.io/cloud-builders/docker
     args:
@@ -40,6 +42,8 @@ steps:
         --labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,gcb-trigger-id=$_TRIGGER_ID
       - '--region=$_DEPLOY_REGION'
       - '--quiet'
+    waitFor:
+      - CI_checks
     id: Deploy
     entrypoint: gcloud
 images:
