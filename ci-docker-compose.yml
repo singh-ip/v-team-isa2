@@ -7,8 +7,8 @@ services:
     container_name: lbp-api
     tty: true
     user: www-data:www-data
-    #    depends_on:
-    #      - lbp-pg
+    depends_on:
+      - lbp-pg
     restart: "no"
     ports:
       - "1010:80"
@@ -92,8 +92,8 @@ services:
 #        ipv4_address: 10.10.1.6
 
 # On-disk storage of DB data, when containers are stopped
-#volumes:
-#  lbp-pg-disk: { }
+volumes:
+  lbp-pg-disk: { }
 
 # Local network for services running using this docker-compose config
 networks:
