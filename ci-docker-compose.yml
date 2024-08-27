@@ -27,18 +27,18 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
 
-#  lbp-pg:
-#    image: postgres:15
-#    container_name: lbp-pg
-#    volumes:
-#      - lbp-pg-disk:/var/lib/postgres
-#    restart: "no"
-#    environment:
-#      POSTGRES_PASSWORD: password
-#      POSTGRES_DB: testing
-#    networks:
-#      lbp-network:
-#        ipv4_address: 10.10.1.2
+  lbp-pg:
+    image: postgres:15
+    container_name: lbp-pg
+    volumes:
+      - lbp-pg-disk:/var/lib/postgres
+    restart: "no"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: testing
+    networks:
+      lbp-network:
+        ipv4_address: 10.10.1.2
 
 #  lbp-mailpit:
 #    image: 'axllent/mailpit:latest'
