@@ -14,7 +14,7 @@ services:
       - "1010:80"
     environment:
       APP_NAME: "Laravel API boilerplate"
-    #      DB_HOST: "lbp-pg"
+      DB_HOST: "lbp-pg"
     #      MAIL_HOST: "lbp-mailpit"
     networks:
       lbp-network:
