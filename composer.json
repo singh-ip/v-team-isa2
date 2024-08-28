@@ -101,8 +101,7 @@
             "@pint",
             "@phpcbf",
             "@phpcs",
-            "@phpmd",
-            "@security-checker"
+            "@phpmd"
         ],
         "pre-push": [
             "@pest",
