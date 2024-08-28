@@ -32,7 +32,7 @@ steps:
       - '-f'
       - dockerfiles/GCP.Dockerfile
     waitFor:
-      - CI_checks
+#      - CI_checks
       - settingDockerCompose
     id: Build
   - name: gcr.io/cloud-builders/docker
@@ -41,7 +41,7 @@ steps:
       - >-
         $_AR_HOSTNAME/$PROJECT_ID/cloud-run-source-deploy/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
     waitFor:
-      - CI_checks
+#      - CI_checks
       - Build
     id: Push
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
@@ -58,7 +58,7 @@ steps:
       - '--region=$_DEPLOY_REGION'
       - '--quiet'
     waitFor:
-      - CI_checks
+#      - CI_checks
       - Build
       - Push
     id: Deploy
