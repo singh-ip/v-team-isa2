@@ -19,7 +19,6 @@ steps:
     script: "docker exec lbp-api composer run ci"
     waitFor:
       - settingDockerCompose
-      - running-migrations
     id: CI_checks
   - name: gcr.io/cloud-builders/docker
     args:
