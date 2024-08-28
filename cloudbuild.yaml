@@ -1,15 +1,18 @@
 steps:
-#  - name: 'docker/compose:latest'
-#    args: [ '-f', 'ci-docker-compose.yml', 'up', '-d' ]
-#    id: settingDockerCompose
+  - name: 'docker/compose:latest'
+    args: [ '-f', 'ci-docker-compose.yml', 'up', '-d' ]
+    id: settingDockerCompose
 #  - name: 'docker/compose:latest'
 #    script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api composer install"
 #    id: Installing dependencies
-  - name: 'docker/compose:latest'
-    script: "docker-compose -f ci-docker-compose.yml up -d"
-    id: CI_checks
+#  - name: 'docker/compose:latest'
+#    script: "docker-compose -f ci-docker-compose.yml up -d"
+#    id: CI_checks
 #    waitFor:
 #      - settingDockerCompose
+  - name: gcr.io/cloud-builders/docker
+    script: "docker exec lbp-api composer run ci"
+    id: CI_checks
   - name: gcr.io/cloud-builders/docker
     args:
       - build
@@ -22,6 +25,7 @@ steps:
       - dockerfiles/GCP.Dockerfile
     waitFor:
       - CI_checks
+      - settingDockerCompose
     id: Build
   - name: gcr.io/cloud-builders/docker
     args:
