@@ -19,7 +19,6 @@ services:
       DB_PASSWORD: password
       DB_PORT: 5441
     #      MAIL_HOST: "lbp-mailpit"
-    command: ["sh","-c","php artisan migrate --force --seed"]
     networks:
       lbp-network-cloud-build:
         ipv4_address: 10.10.1.1
