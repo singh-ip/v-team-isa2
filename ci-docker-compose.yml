@@ -36,6 +36,7 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: testing
+    command: ["sh","-c","docker run lbp-api php artisan migrate --force --seed"]
     networks:
       lbp-network:
         ipv4_address: 10.10.1.2

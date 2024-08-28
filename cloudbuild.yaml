@@ -10,11 +10,11 @@ steps:
 #    id: CI_checks
 #    waitFor:
 #      - settingDockerCompose
-  - name: gcr.io/cloud-builders/docker
-    script: "docker run lbp-api php artisan migrate --force --seed"
-    waitFor:
-      - settingDockerCompose
-    id: running-migrations
+#  - name: gcr.io/cloud-builders/docker
+#    script: "docker run lbp-api php artisan migrate --force --seed"
+#    waitFor:
+#      - settingDockerCompose
+#    id: running-migrations
   - name: gcr.io/cloud-builders/docker
     script: "docker exec lbp-api composer run ci"
     waitFor:
