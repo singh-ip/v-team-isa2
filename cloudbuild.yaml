@@ -16,7 +16,7 @@ steps:
 #      - settingDockerCompose
 #    id: running-migrations
   - name: 'docker/compose:latest'
-    script: "exec -it lbp-api composer run ci"
+    script: "exec lbp-api composer run ci"
     waitFor:
       - settingDockerCompose
     id: CI_checks
