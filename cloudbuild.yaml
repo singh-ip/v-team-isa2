@@ -4,7 +4,7 @@ steps:
     args:
       - -c
       - |
-        -f ci-docker-compose.yml up -d
+        docker-compose -f ci-docker-compose.yml up -d
     id: settingDockerCompose
 #  - name: 'docker/compose:latest'
 #    script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api composer install"
