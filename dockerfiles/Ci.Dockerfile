@@ -15,5 +15,3 @@ RUN composer install
 
 RUN chmod -R 777 storage bootstrap dockerfiles
 RUN chown -R www-data:www-data storage bootstrap dockerfiles
-
-ENTRYPOINT ["/var/www/html/dockerfiles/ci-runner"]
