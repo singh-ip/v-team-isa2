@@ -1,6 +1,6 @@
 steps:
   - name: 'docker/compose:latest'
-    entrypoint: "bash"
+    entrypoint: /bin/bash
     args:
       - -c
       - |
