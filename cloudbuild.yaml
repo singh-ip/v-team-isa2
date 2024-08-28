@@ -11,7 +11,7 @@ steps:
 #    waitFor:
 #      - settingDockerCompose
   - name: gcr.io/cloud-builders/docker
-    script: "docker exec lbp-api php artisan migrate --force --seed"
+    script: "docker run lbp-api php artisan migrate --force --seed"
     waitFor:
       - settingDockerCompose
     id: running-migrations
