@@ -1,24 +1,27 @@
 version: "3"
 services:
-  lbp-api:
+  lbp-api-cloud-build:
     build:
       context: .
       dockerfile: dockerfiles/Ci.Dockerfile
-    container_name: lbp-api
+    container_name: lbp-api-cloud-build
     tty: true
     user: www-data:www-data
     depends_on:
-      - lbp-pg
+      - lbp-pg-cloud-build
     restart: "no"
     ports:
       - "1010:80"
     environment:
       APP_NAME: "Laravel API boilerplate"
-      DB_HOST: "lbp-pg"
+      DB_HOST: "lbp-pg-cloud-build"
+      DB_DATABASE: testing
+      DB_PASSWORD: password
+      DB_PORT: 5441
     #      MAIL_HOST: "lbp-mailpit"
-    command: ["sh","-c","docker run lbp-api php artisan migrate --force --seed"]
+    command: ["sh","-c","php artisan migrate --force --seed"]
     networks:
-      lbp-network:
+      lbp-network-cloud-build:
         ipv4_address: 10.10.1.1
     #    deploy:
     #      resources:
@@ -28,17 +31,19 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
 
-  lbp-pg:
+  lbp-pg-cloud-build:
     image: postgres:15
-    container_name: lbp-pg
+    container_name: lbp-pg-cloud-build
     volumes:
       - lbp-pg-disk:/var/lib/postgres
-    restart: "no"
+    restart: always
+    ports:
+      - "5441:5432"
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: testing
     networks:
-      lbp-network:
+      lbp-network-cloud-build:
         ipv4_address: 10.10.1.2
 
 #  lbp-mailpit:
@@ -98,7 +103,7 @@ volumes:
 
 # Local network for services running using this docker-compose config
 networks:
-  lbp-network:
+  lbp-network-cloud-build:
     ipam:
       driver: default
       config:
