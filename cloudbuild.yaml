@@ -16,7 +16,7 @@ steps:
 #      - settingDockerCompose
 #    id: running-migrations
   - name: 'docker'
-    args: [ 'compose', 'exec', 'lbp-api-cloud-build', '/bin/sh', '-c', 'composer run ci']
+    args: [ 'compose', 'exec', 'lbp-api-cloud-build', '/bin/sh', '-c', 'sudo composer run ci']
 #    script: "docker exec lbp-api-cloud-build composer run ci"
     waitFor:
       - settingDockerCompose
