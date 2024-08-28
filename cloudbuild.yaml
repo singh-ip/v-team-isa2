@@ -16,7 +16,7 @@ steps:
 #      - settingDockerCompose
 #    id: running-migrations
   - name: gcr.io/cloud-builders/docker
-    script: "exec lbp-api composer run ci"
+    script: "docker run exec lbp-api composer run ci"
     waitFor:
       - settingDockerCompose
     id: CI_checks
