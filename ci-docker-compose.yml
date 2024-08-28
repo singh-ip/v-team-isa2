@@ -38,6 +38,8 @@ services:
     restart: always
     ports:
       - "5441:5432"
+    expose:
+      - "5441"
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: testing
