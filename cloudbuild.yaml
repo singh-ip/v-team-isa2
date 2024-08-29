@@ -19,7 +19,7 @@ steps:
     args: [ 'compose', 'exec', 'lbp-api-cloud-build', '/bin/sh', '-c', 'php artisan migrate --force --seed']
     waitFor:
       - settingDockerCompose
-      - enabling-postgres-port
+#      - enabling-postgres-port
     id: running-migrations
   - name: 'docker'
     args: [ 'compose', 'exec', 'lbp-api-cloud-build', '/bin/sh', '-c', 'composer run ci']
