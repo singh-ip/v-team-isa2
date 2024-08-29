@@ -17,7 +17,7 @@ services:
       DB_HOST: "lbp-pg-cloud-build"
       DB_DATABASE: testing
       DB_PASSWORD: password
-      DB_PORT: 5441
+      DB_PORT: 5432
     #      MAIL_HOST: "lbp-mailpit"
     networks:
       lbp-network-cloud-build:
