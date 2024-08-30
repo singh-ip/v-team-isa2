@@ -11,7 +11,7 @@ steps:
 #    waitFor:
 #      - settingDockerCompose
   - name: 'docker'
-    args: [ 'run', '--name', 'lbp-api-cloud-build','-d', '-p', "5432:5432"]
+    args: [ 'run', '--name', 'lbp-api-cloud-build','-d', '-p', "5432:5432", 'postgres:15']
     waitFor:
       - settingDockerCompose
     id: enabling-postgres-port
