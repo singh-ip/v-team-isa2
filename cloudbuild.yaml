@@ -1,6 +1,6 @@
 steps:
-  - name: 'docker'
-    args: [ 'compose', '-f', 'ci-docker-compose.yml', 'up', '-d' ]
+  - name: 'docker/compose'
+    args: [ '-f', 'ci-docker-compose.yml', 'up', '-d' ]
     id: settingDockerCompose
 #  - name: 'docker/compose:latest'
 #    script: "docker-compose -f ci-docker-compose.yml exec -T lbp-api composer install"
@@ -15,8 +15,8 @@ steps:
 #    waitFor:
 #      - settingDockerCompose
 #    id: enabling-postgres-port
-  - name: 'docker'
-    args: [ 'compose', '-f', 'ci-docker-compose.yml', 'exec', 'lbp-api-cloud-build', '/bin/sh', '-c', 'php artisan migrate --force --seed']
+  - name: 'docker/compose'
+    args: ['-f', 'ci-docker-compose.yml', 'exec', 'lbp-api-cloud-build', 'php artisan migrate --force --seed']
     waitFor:
       - settingDockerCompose
 #      - enabling-postgres-port
