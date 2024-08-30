@@ -16,7 +16,7 @@ steps:
 #      - settingDockerCompose
 #    id: enabling-postgres-port
   - name: 'docker'
-    args: [ 'compose', '-f', 'ci-docker-compose.yml', 'exec', 'lbp-api-cloud-build', 'php artisan migrate --force --seed']
+    args: [ 'compose', '-f', 'ci-docker-compose.yml', 'exec', 'lbp-api-cloud-build', '/bin/sh', '-c', 'php artisan migrate --force --seed']
     waitFor:
       - settingDockerCompose
 #      - enabling-postgres-port
